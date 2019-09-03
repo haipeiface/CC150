@@ -1,5 +1,9 @@
 package C1ArraysAndStrings;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class Chapter1 {
 
     //1.1
@@ -35,12 +39,12 @@ public class Chapter1 {
         if (str == null) return null;
         int len = str.length;
         if (len < 2) return new String(str);
-        int tail = 1;
+        int tail = 1;    //结果长度
 
         for (int i = 1; i < len; ++i) {
             int j;
             for (j = 0; j < tail; ++j) {
-                if (str[i] == str[j]) break;
+                if (str[i] == str[j]) break;    //相同,不维护结果
             }
             if (j == tail) {
                 str[tail] = str[i];
@@ -53,4 +57,30 @@ public class Chapter1 {
         }
         return new String(str);
     }
+
+    //1.4
+    public static boolean anagram(String s, String t) {
+        List<Character> listA = StringHelper.String2ListCharacter(s);
+        List<Character> listB = StringHelper.String2ListCharacter(t);
+
+        Collections.sort(listA, new Comparator<Character>(){
+            @Override
+            public int compare(Character o1, Character o2) {
+                return o1 - o2;
+            }
+        });
+
+        Collections.sort(listB, new Comparator<Character>(){
+            @Override
+            public int compare(Character o1, Character o2) {
+                return o1 - o2;
+            }
+        });
+
+        String s1 = listA.toString();
+        String s2 = listB.toString();
+
+        return s1.equals(s2);
+    }
+
 }
