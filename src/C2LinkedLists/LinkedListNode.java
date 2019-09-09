@@ -17,6 +17,10 @@ public class LinkedListNode {
         current.next = node;
     }
 
+    public int getData() {
+        return data;
+    }
+
     @Override
     public String toString() {
         LinkedListNode n = this;
