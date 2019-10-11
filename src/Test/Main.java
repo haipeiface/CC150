@@ -4,6 +4,10 @@ import C1ArraysAndStrings.Chapter1;
 import C1ArraysAndStrings.StringHelper;
 import C2LinkedLists.Chapter2;
 import C2LinkedLists.LinkedListNode;
+import C3StacksAndQueues.Chapter3;
+
+import java.util.Stack;
+
 
 public class Main {
 
@@ -45,6 +49,18 @@ public class Main {
         circle.next.next.next.next.next.next = joinPoint;
         System.out.println(Chapter2.findBeginning(circle).getData());
 
+        //3.6
+        Stack<Integer> stack = new Stack<>();
+        stack.push(2);
+        stack.push(5);
+        stack.push(1);
+        stack.push(3);
+        stack.push(4);
+        Stack<Integer> r = Chapter3.sort(stack);
+        System.out.println("-------3.6------");
+        for (int i: r) {
+            System.out.println(i);
+        }
     }
 
 }
