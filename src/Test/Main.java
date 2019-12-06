@@ -5,6 +5,9 @@ import C1ArraysAndStrings.StringHelper;
 import C2LinkedLists.Chapter2;
 import C2LinkedLists.LinkedListNode;
 import C3StacksAndQueues.Chapter3;
+import StaticProxy.Bird;
+import StaticProxy.DynamicProxy.MyInvocationHandler;
+import StaticProxy.Flyable;
 
 import java.util.Stack;
 
@@ -61,6 +64,17 @@ public class Main {
         for (int i: r) {
             System.out.println(i);
         }
+//        static proxy
+//        Bird bird = new Bird();
+//        BirdTimeProxy p2 = new BirdTimeProxy(bird);
+//        BirdLogProxy p1 = new BirdLogProxy(p2);
+//
+//        p1.fly();
+
+        MyInvocationHandler myInvocationHandler = new MyInvocationHandler();
+        Bird bird = new Bird();
+        Flyable flyable = (Flyable) myInvocationHandler.bind(bird);
+        flyable.fly();
     }
 
 }
