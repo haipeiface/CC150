@@ -8,6 +8,8 @@ import C3StacksAndQueues.Chapter3;
 import StaticProxy.Bird;
 import StaticProxy.DynamicProxy.MyInvocationHandler;
 import StaticProxy.Flyable;
+import StaticProxy.RunoobDemo.Image;
+import StaticProxy.RunoobDemo.RealImage;
 
 import java.util.Stack;
 
@@ -74,7 +76,12 @@ public class Main {
         MyInvocationHandler myInvocationHandler = new MyInvocationHandler();
         Bird bird = new Bird();
         Flyable flyable = (Flyable) myInvocationHandler.bind(bird);
+
+
         flyable.fly();
+
+
+
     }
 
 }
