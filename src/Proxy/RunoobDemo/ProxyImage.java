@@ -1,4 +1,4 @@
-package StaticProxy.RunoobDemo;
+package Proxy.RunoobDemo;
 
 public class ProxyImage implements Image{
     private Image image;

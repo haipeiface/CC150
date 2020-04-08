@@ -1,4 +1,4 @@
-package StaticProxy.ngief;
+package Proxy.ngief;
 
 public interface Target<T> {
     Class<T> type();

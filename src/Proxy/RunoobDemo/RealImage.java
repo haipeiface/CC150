@@ -1,4 +1,4 @@
-package StaticProxy.RunoobDemo;
+package Proxy.RunoobDemo;
 
 public class RealImage implements Image{
     @Override

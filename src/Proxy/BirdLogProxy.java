@@ -1,4 +1,4 @@
-package StaticProxy;
+package Proxy;
 
 public class BirdLogProxy implements Flyable {
     private Flyable flyable;

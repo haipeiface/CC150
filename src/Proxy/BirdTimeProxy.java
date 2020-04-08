@@ -1,4 +1,4 @@
-package StaticProxy;
+package Proxy;
 
 public class BirdTimeProxy implements Flyable {
     private Flyable flyable;

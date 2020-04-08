@@ -1,4 +1,4 @@
-package StaticProxy;
+package Proxy;
 
 public interface Flyable {
 

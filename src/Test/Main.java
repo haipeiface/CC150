@@ -5,12 +5,17 @@ import C1ArraysAndStrings.StringHelper;
 import C2LinkedLists.Chapter2;
 import C2LinkedLists.LinkedListNode;
 import C3StacksAndQueues.Chapter3;
-import StaticProxy.Bird;
-import StaticProxy.DynamicProxy.MyInvocationHandler;
-import StaticProxy.Flyable;
-import StaticProxy.RunoobDemo.Image;
-import StaticProxy.RunoobDemo.RealImage;
+import Proxy.Bird;
+import Proxy.DynamicProxy.MyInvocationHandler;
+import Proxy.Flyable;
+import Proxy.HorseProxy.Eatable;
+import Proxy.HorseProxy.Horse;
+import Proxy.HorseProxy.HorseLogProxy;
+import Proxy.HorseProxy.HorseTimeProxy;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Stack;
 
 
@@ -80,8 +85,21 @@ public class Main {
 
         flyable.fly();
 
+        new HorseTimeProxy(new HorseLogProxy(new Horse())).eat();
 
-
+        Horse horse = new Horse();
+        Eatable e = (Eatable) Proxy.newProxyInstance(Horse.class.getClassLoader(),
+                new Class[]{Eatable.class},
+                new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        System.out.println("dynamic proxy begin...");
+                        Object o = method.invoke(horse, args);
+                        System.out.println("dynamic proxy end...");
+                        return null;
+                    }
+                });
+        e.eat();
     }
 
 }

@@ -1,4 +1,4 @@
-package StaticProxy.ngief;
+package Proxy.ngief;
 
 public class Reflectivengief extends Ngief {
     @Override

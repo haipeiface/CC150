@@ -1,4 +1,4 @@
-package StaticProxy.ngief;
+package Proxy.ngief;
 
 public class Main {
     public static void main(String args[]){

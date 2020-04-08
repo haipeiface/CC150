@@ -1,4 +1,4 @@
-package StaticProxy.ngief;
+package Proxy.ngief;
 
 public abstract class Ngief {
 
